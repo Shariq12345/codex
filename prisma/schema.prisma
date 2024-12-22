@@ -10,11 +10,61 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-model Post {
-    id        Int      @id @default(autoincrement())
-    name      String
+model User {
+    id           String @id @default(cuid())
+    emailAddress String @unique
+
+    imageUrl  String?
+    firstName String?
+    lastName  String?
+
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 
-    @@index([name])
+    credits Int @default(150)
+
+    userToProject UserToProject[]
+}
+
+model Project {
+    id        String @id @default(cuid())
+    name      String
+    githubUrl String
+
+    createdAt DateTime  @default(now())
+    updatedAt DateTime  @updatedAt
+    deletedAt DateTime?
+
+    userToProject UserToProject[]
+    Commit        Commit[]
+}
+
+model UserToProject {
+    id        String @id @default(cuid())
+    userId    String
+    projectId String
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    user    User    @relation(fields: [userId], references: [id])
+    project Project @relation(fields: [projectId], references: [id])
+
+    @@unique([userId, projectId])
+}
+
+model Commit {
+    id                 String   @id @default(cuid())
+    commitHash         String
+    commitMessage      String
+    commitAuthor       String
+    commitAuthorAvatar String
+    commitDate         DateTime
+    summary            String //AI SUMMARY
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    projectId String
+    project   Project @relation(fields: [projectId], references: [id])
 }

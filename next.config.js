@@ -5,6 +5,23 @@
 import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+    images: {
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: 'https://avatars.githubusercontent.com',
+                port: '', // Leave blank if no specific port is used
+                pathname: '/**', // Allow all paths under this hostname
+            },
+            {
+                protocol: "https",
+                hostname: 'avatars.githubusercontent.com',
+                port: '', // Leave blank if no specific port is used
+                pathname: '/**', // Allow all paths under this hostname
+            }
+        ]
+    }
+};
 
 export default config;
