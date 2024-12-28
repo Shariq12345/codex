@@ -6,7 +6,6 @@ import { z } from "zod";
 
 const bodyParser = z.object({
   meetingUrl: z.string(),
-  projectId: z.string(),
   meetingId: z.string(),
 });
 
@@ -20,7 +19,7 @@ export async function POST(req: NextRequest) {
 
   try {
     const body = await req.json();
-    const { meetingId, meetingUrl, projectId } = bodyParser.parse(body);
+    const { meetingId, meetingUrl } = bodyParser.parse(body);
     const { summaries } = await processMeeting(meetingUrl);
     await db.issue.createMany({
       data: summaries.map((summary) => ({

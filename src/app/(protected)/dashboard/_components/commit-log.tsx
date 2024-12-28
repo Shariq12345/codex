@@ -122,14 +122,14 @@ const CommitLog = () => {
                         changed */}
                         {`${filesChanged.length} files changed`}
                       </span>
-                      <span className="inline-flex items-center text-green-600">
+                      {/* <span className="inline-flex items-center text-green-600">
                         <Plus className="mr-1 h-4 w-4" />
                         24
                       </span>
                       <span className="inline-flex items-center text-red-600">
                         <Minus className="mr-1 h-4 w-4" />
                         12
-                      </span>
+                      </span> */}
                     </div>
 
                     {/* Markdown Summary */}

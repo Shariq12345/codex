@@ -12,7 +12,7 @@ const DashboardPage = () => {
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between gap-y-4">
-        <div className="w-fit rounded-md bg-primary px-4 py-3">
+        <div className="w-fit rounded-md bg-blue-600 px-4 py-3">
           {/* GITHUB LINK */}
           <div className="flex items-center">
             <GithubIcon className="size-5 text-white" />

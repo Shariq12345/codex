@@ -144,8 +144,8 @@ const AskQuestionCard = () => {
         <CardContent className="p-6">
           <form onSubmit={onSubmit} className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="rounded-lg bg-primary/10 p-2">
-                <Sparkles className="h-5 w-5 text-primary" />
+              <div className="rounded-lg bg-blue-600/10 p-2">
+                <Sparkles className="h-5 w-5 animate-pulse text-primary" />
               </div>
               <div>
                 <h2 className="text-lg font-semibold">Ask AI Assistant</h2>
@@ -163,7 +163,12 @@ const AskQuestionCard = () => {
             />
 
             <div className="flex justify-end">
-              <Button type="submit" disabled={loading} size="lg">
+              <Button
+                type="submit"
+                disabled={loading}
+                size="lg"
+                className="bg-blue-600 hover:bg-blue-700"
+              >
                 {loading ? (
                   <>
                     <Bot className="mr-2 h-4 w-4 animate-spin" />

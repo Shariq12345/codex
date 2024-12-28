@@ -1,8 +1,14 @@
-"use client";
 import React from "react";
+import IssuesList from "../_components/issues_list";
 
-const MeetingIdPage = () => {
-  return <div>MeetingIdPage</div>;
+interface MeetingDetailsPageProps {
+  params: Promise<[meetingId: string]>;
+}
+
+const MeetingDetailsPage = async ({ params }: MeetingDetailsPageProps) => {
+  // @ts-ignore
+  const { meetingId } = await params;
+  return <IssuesList meetingId={meetingId} />;
 };
 
-export default MeetingIdPage;
+export default MeetingDetailsPage;

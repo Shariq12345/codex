@@ -1,7 +1,7 @@
 import { AssemblyAI } from "assemblyai";
 
 const client = new AssemblyAI({
-  apiKey: process.env.ASSEMBLY_AI_API_KEY!,
+  apiKey: "9d6b6b65cffa446697bbda3f5a2e9a6e",
 });
 
 function msToTime(ms: number) {
@@ -27,9 +27,15 @@ export const processMeeting = async (meetingUrl: string) => {
       summary: chapter.summary,
     })) || [];
 
-  if (transcript.text) throw new Error("No transcript found!");
+  if (!transcript.text) throw new Error("No transcript found!");
 
   return {
     summaries,
   };
 };
+
+// const FILE_URL = "https://assembly.ai/sports_injuries.mp3";
+
+// const response = await processMeeting(FILE_URL);
+
+// console.log(response);
