@@ -2,7 +2,7 @@
 import React from "react";
 import { useProject } from "@/hooks/use-project";
 import { api } from "@/trpc/react";
-import { MeetingCard } from "../dashboard/_components/meeting-card";
+import { MeetingCard } from "./_components/meeting-card";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";

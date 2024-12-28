@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/sheet";
 import { useProject } from "@/hooks/use-project";
 import { api } from "@/trpc/react";
-import AskQuestionCard from "../dashboard/_components/ask-question-card";
+import AskQuestionCard from "./ask-question-card";
 import MDEditor from "@uiw/react-md-editor";
 import CodeReferences from "../dashboard/_components/code-references";
 import { MessageCircle, Clock, ChevronRight, FileText } from "lucide-react";

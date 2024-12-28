@@ -4,8 +4,9 @@ import { useProject } from "@/hooks/use-project";
 import { ExternalLinkIcon, GithubIcon } from "lucide-react";
 import Link from "next/link";
 import CommitLog from "./_components/commit-log";
-import AskQuestionCard from "./_components/ask-question-card";
-import { MeetingCard } from "./_components/meeting-card";
+import AskQuestionCard from "../qa/ask-question-card";
+import { MeetingCard } from "../meetings/_components/meeting-card";
+import ArchiveButton from "./_components/archive-button";
 
 const DashboardPage = () => {
   const { project } = useProject();
@@ -33,7 +34,10 @@ const DashboardPage = () => {
 
         <div className="h-4"></div>
 
-        <div className="flex items-center gap-4">Team InviteButton Archive</div>
+        <div className="flex items-center gap-4">
+          Team Invite
+          <ArchiveButton />
+        </div>
       </div>
 
       <div className="mt-4">

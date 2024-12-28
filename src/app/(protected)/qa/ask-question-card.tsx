@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useProject } from "@/hooks/use-project";
 import { askQuestion } from "@/lib/actions";
 import { readStreamableValue } from "ai/rsc";
-import CodeReferences from "./code-references";
+import CodeReferences from "../dashboard/_components/code-references";
 import { api } from "@/trpc/react";
 import { toast } from "sonner";
 import { Bot, Save, Sparkles, X } from "lucide-react";
