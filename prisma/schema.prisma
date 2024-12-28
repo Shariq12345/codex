@@ -2,12 +2,15 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-    provider = "prisma-client-js"
+    provider        = "prisma-client-js"
+    previewFeatures = ["postgresqlExtensions"]
 }
 
 datasource db {
-    provider = "postgresql"
-    url      = env("DATABASE_URL")
+    provider   = "postgresql"
+    url        = env("DATABASE_URL")
+    directUrl  = env("DIRECT_URL")
+    extensions = [vector]
 }
 
 model User {
@@ -23,7 +26,8 @@ model User {
 
     credits Int @default(150)
 
-    userToProject UserToProject[]
+    userToProject  UserToProject[]
+    questionsAsked Question[]
 }
 
 model Project {
@@ -35,8 +39,11 @@ model Project {
     updatedAt DateTime  @updatedAt
     deletedAt DateTime?
 
-    userToProject UserToProject[]
-    Commit        Commit[]
+    userToProject       UserToProject[]
+    Commit              Commit[]
+    SourceCodeEmbedding SourceCodeEmbedding[]
+    savedQuestions      Question[]
+    meetings            Meeting[]
 }
 
 model UserToProject {
@@ -67,4 +74,70 @@ model Commit {
 
     projectId String
     project   Project @relation(fields: [projectId], references: [id])
+}
+
+model SourceCodeEmbedding {
+    id String @id @default(cuid())
+
+    summaryEmbedding Unsupported("vector(768)")?
+    sourceCode       String
+    fileName         String
+    summary          String
+
+    projectId String
+    project   Project @relation(fields: [projectId], references: [id])
+}
+
+model Question {
+    id       String @id @default(cuid())
+    question String
+    answer   String
+
+    filesReferences Json?
+
+    projectId String
+    project   Project @relation(fields: [projectId], references: [id])
+
+    userId String
+    user   User   @relation(fields: [userId], references: [id])
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @default(now())
+}
+
+enum MeetingStatus {
+    PROCESSING
+    COMPLETED
+}
+
+model Meeting {
+    id   String @id @default(cuid())
+    name String
+
+    meetingUrl String
+
+    projectId String
+    project   Project @relation(fields: [projectId], references: [id])
+
+    status MeetingStatus @default(PROCESSING)
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    issues    Issue[]
+}
+
+model Issue {
+    id String @id @default(cuid())
+
+    start    String
+    end      String
+    gist     String
+    headline String
+    summary  String
+
+    meetingId String
+    meeting   Meeting @relation(fields: [meetingId], references: [id])
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
 }

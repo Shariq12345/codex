@@ -89,3 +89,25 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 240 13%% 91%;
     --sidebar-ring: 217.2 91.2% 50.8%; */
+
+@layer base {
+  .prose {
+    @apply text-foreground;
+  }
+
+  .prose pre {
+    @apply bg-muted text-muted-foreground;
+  }
+
+  .prose code {
+    @apply rounded bg-muted px-1 py-0.5 text-muted-foreground;
+  }
+
+  .prose a {
+    @apply text-primary underline-offset-4;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-border;
+  }
+}
