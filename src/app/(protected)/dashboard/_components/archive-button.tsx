@@ -90,7 +90,7 @@ const ArchiveButton = () => {
                 <p>
                   To confirm, please type the name of the project{" "}
                   <span className="font-bold">{project?.name}</span> and the
-                  owner's name <span className="font-bold">{ownerName}</span>.
+                  owner&apos;s name <span className="font-bold">{ownerName}</span>.
                 </p>
               </div>
             </DialogDescription>
@@ -120,7 +120,7 @@ const ArchiveButton = () => {
                 htmlFor="owner-name"
                 className="block text-sm font-medium text-gray-700"
               >
-                Owner's Name
+                Owner&apos;s Name
               </label>
               <Input
                 id="owner-name"

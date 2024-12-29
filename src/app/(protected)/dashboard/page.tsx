@@ -7,6 +7,12 @@ import CommitLog from "./_components/commit-log";
 import AskQuestionCard from "../qa/ask-question-card";
 import { MeetingCard } from "../meetings/_components/meeting-card";
 import ArchiveButton from "./_components/archive-button";
+// import InviteButton from "./_components/invite-button";
+const InviteButton = dynamic(() => import("./_components/invite-button"), {
+  ssr: false,
+});
+import TeamMembers from "./_components/team-members";
+import dynamic from "next/dynamic";
 
 const DashboardPage = () => {
   const { project } = useProject();
@@ -35,7 +41,8 @@ const DashboardPage = () => {
         <div className="h-4"></div>
 
         <div className="flex items-center gap-4">
-          Team Invite
+          <TeamMembers />
+          <InviteButton />
           <ArchiveButton />
         </div>
       </div>

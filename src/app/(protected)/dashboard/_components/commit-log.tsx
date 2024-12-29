@@ -6,8 +6,6 @@ import {
   ExternalLinkIcon,
   GitCommitHorizontal,
   FileText,
-  Plus,
-  Minus,
   Clock,
 } from "lucide-react";
 import Image from "next/image";
