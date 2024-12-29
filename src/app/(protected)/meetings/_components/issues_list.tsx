@@ -63,8 +63,8 @@ const IssuesList = ({ meetingId }: IssuesListProps) => {
       >
         <div className="mx-auto flex max-w-2xl items-center justify-between gap-x-8 border-b border-gray-200/80 pb-6 lg:mx-0 lg:max-w-none">
           <div className="flex items-center gap-x-6">
-            <div className="rounded-full bg-blue-50 p-3 shadow-sm transition-all duration-200 hover:bg-blue-100">
-              <VideoIcon className="size-5 text-blue-600" />
+            <div className="rounded-full bg-violet-50 p-3 shadow-sm transition-all duration-200 hover:bg-violet-100">
+              <VideoIcon className="size-5 text-violet-600" />
             </div>
             <div>
               <div className="flex items-center gap-2 text-sm text-gray-600">
@@ -127,7 +127,7 @@ const IssueCard = ({
         <DialogContent className="sm:max-w-lg">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2 text-xl">
-              <AlertCircle className="size-5 text-blue-600" />
+              <AlertCircle className="size-5 text-violet-600" />
               {issue.gist}
             </DialogTitle>
             <DialogDescription className="flex items-center gap-2">
@@ -158,14 +158,14 @@ const IssueCard = ({
         className="group relative overflow-hidden transition-all duration-200 hover:shadow-lg"
       >
         <div
-          className={`absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5 opacity-0 transition-opacity duration-200 ${
+          className={`absolute inset-0 bg-gradient-to-r from-violet-600/5 to-purple-600/5 opacity-0 transition-opacity duration-200 ${
             isHovered ? "opacity-100" : ""
           }`}
           style={{ pointerEvents: "none" }} // Allow interactions with underlying elements
         />
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-lg">
-            <AlertCircle className="size-4 text-blue-600" />
+            <AlertCircle className="size-4 text-violet-600" />
             {issue.gist}
           </CardTitle>
           <div className="border-b border-gray-200/80" />

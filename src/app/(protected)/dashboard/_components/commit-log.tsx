@@ -63,7 +63,7 @@ const CommitLog = () => {
                   <div
                     className={cn(
                       commitIndex === commits.length - 1 ? "h-6" : "h-full",
-                      "absolute left-5 top-0 w-0.5 bg-gray-200 transition-colors group-hover:bg-blue-200",
+                      "absolute left-5 top-0 w-0.5 bg-gray-200 transition-colors group-hover:bg-violet-200",
                     )}
                   />
                   <Image
@@ -77,7 +77,7 @@ const CommitLog = () => {
 
                 {/* Commit Content */}
                 <div className="flex-1">
-                  <div className="rounded-lg bg-white p-4 shadow-sm ring-1 ring-gray-200 transition-all hover:ring-blue-200">
+                  <div className="rounded-lg bg-white p-4 shadow-sm ring-1 ring-gray-200 transition-all hover:ring-violet-200">
                     {/* Header */}
                     <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-center">
                       <div className="flex items-center gap-2">
@@ -97,7 +97,7 @@ const CommitLog = () => {
                         <Link
                           target="_blank"
                           href={`${project?.githubUrl}/commit/${commit.commitHash}`}
-                          className="inline-flex items-center text-sm text-blue-500 transition-colors hover:text-blue-600"
+                          className="inline-flex items-center text-sm text-violet-500 transition-colors hover:text-violet-600"
                         >
                           <span className="hidden sm:inline">View Commit</span>
                           <ExternalLinkIcon className="ml-1 h-4 w-4" />
@@ -107,7 +107,7 @@ const CommitLog = () => {
 
                     {/* Commit Message */}
                     <div className="group mt-3">
-                      <h3 className="text-sm font-semibold text-gray-800 transition-colors group-hover:text-blue-600">
+                      <h3 className="text-sm font-semibold text-gray-800 transition-colors group-hover:text-violet-600">
                         {commit.commitMessage}
                       </h3>
                     </div>
@@ -140,7 +140,7 @@ const CommitLog = () => {
                           ),
                           a: ({ node, ...props }) => (
                             <a
-                              className="text-blue-500 transition-colors hover:text-blue-600 hover:underline"
+                              className="text-violet-500 transition-colors hover:text-violet-600 hover:underline"
                               target="_blank"
                               rel="noopener noreferrer"
                               {...props}

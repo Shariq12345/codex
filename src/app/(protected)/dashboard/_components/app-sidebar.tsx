@@ -74,7 +74,7 @@ const AppSidebar = () => {
                       <Link
                         href={item.url}
                         className={cn({
-                          "!bg-blue-600 !text-white": pathname === item.url,
+                          "!bg-violet-600 !text-white": pathname === item.url,
                         })}
                       >
                         <item.icon />
@@ -101,7 +101,7 @@ const AppSidebar = () => {
                           className={cn(
                             "flex size-6 items-center justify-center rounded-sm border bg-white text-sm text-primary",
                             {
-                              "bg-blue-600 text-white":
+                              "bg-violet-600 text-white":
                                 project.id === projectId,
                             },
                           )}

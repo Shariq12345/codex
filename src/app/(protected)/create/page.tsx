@@ -124,7 +124,7 @@ const CreatePage = () => {
                       for this project.
                     </p>
                   </div>
-                  <p className="ml-6 text-sm text-blue-600">
+                  <p className="ml-6 text-sm text-violet-600">
                     You have <strong>{checkCredits.data?.userCredits}</strong>{" "}
                     credits remaining.
                   </p>
@@ -139,7 +139,7 @@ const CreatePage = () => {
                 !!checkCredits.isPending ||
                 !hasEnoughCredits
               }
-              className="bg-blue-600 hover:bg-blue-700"
+              className="bg-violet-600 hover:bg-violet-700"
             >
               {!!checkCredits.data ? "Create Project" : "Check Credits"}
             </Button>

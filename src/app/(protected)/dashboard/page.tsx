@@ -8,7 +8,9 @@ import AskQuestionCard from "../qa/ask-question-card";
 import { MeetingCard } from "../meetings/_components/meeting-card";
 import ArchiveButton from "./_components/archive-button";
 // import InviteButton from "./_components/invite-button";
-const InviteButton = dynamic(() => import("./_components/invite-button"), {ssr: false});
+const InviteButton = dynamic(() => import("./_components/invite-button"), {
+  ssr: false,
+});
 import TeamMembers from "./_components/team-members";
 import dynamic from "next/dynamic";
 
@@ -17,7 +19,7 @@ const DashboardPage = () => {
   return (
     <div>
       <div className="flex flex-wrap items-center justify-between gap-y-4">
-        <div className="w-fit rounded-md bg-blue-600 px-4 py-3">
+        <div className="w-fit rounded-md bg-violet-600 px-4 py-3">
           {/* GITHUB LINK */}
           <div className="flex items-center">
             <GithubIcon className="size-5 text-white" />

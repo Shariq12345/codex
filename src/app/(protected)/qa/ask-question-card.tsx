@@ -144,7 +144,7 @@ const AskQuestionCard = () => {
         <CardContent className="p-6">
           <form onSubmit={onSubmit} className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="rounded-lg bg-blue-600/10 p-2">
+              <div className="rounded-lg bg-violet-600/10 p-2">
                 <Sparkles className="h-5 w-5 animate-pulse text-primary" />
               </div>
               <div>
@@ -167,7 +167,7 @@ const AskQuestionCard = () => {
                 type="submit"
                 disabled={loading}
                 size="lg"
-                className="bg-blue-600 hover:bg-blue-700"
+                className="bg-violet-600 hover:bg-violet-700"
               >
                 {loading ? (
                   <>

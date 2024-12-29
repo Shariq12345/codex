@@ -33,7 +33,7 @@ const BillingPage = () => {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Coins className="size-5 text-blue-500" />
+              <Coins className="size-5 text-violet-500" />
               Current Balance
             </CardTitle>
           </CardHeader>
@@ -46,14 +46,14 @@ const BillingPage = () => {
         </Card>
 
         {/* Info Card */}
-        <Card className="bg-blue-50">
+        <Card className="bg-violet-50">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-blue-700">
+            <CardTitle className="flex items-center gap-2 text-violet-700">
               <InfoIcon className="size-5" />
               How Credits Work
             </CardTitle>
           </CardHeader>
-          <CardContent className="text-sm text-blue-700">
+          <CardContent className="text-sm text-violet-700">
             <p className="mb-2">
               Each credit allows you to index 1 file in a repository.
             </p>
@@ -79,13 +79,13 @@ const BillingPage = () => {
             <div className="mb-6 flex items-center justify-between">
               <div className="text-sm font-medium">
                 Selected Amount:{" "}
-                <span className="text-lg font-bold text-blue-600">
+                <span className="text-lg font-bold text-violet-600">
                   {creditsToBuyAmount} credits
                 </span>
               </div>
               <div className="text-sm font-medium">
                 Price:{" "}
-                <span className="text-lg font-bold text-blue-600">
+                <span className="text-lg font-bold text-violet-600">
                   ${price}
                 </span>
               </div>
@@ -107,7 +107,7 @@ const BillingPage = () => {
 
           <Button
             size="lg"
-            className="w-full bg-blue-600 hover:bg-blue-700 md:w-auto"
+            className="w-full bg-violet-600 hover:bg-violet-700 md:w-auto"
             onClick={async () => {
               await createCheckoutSession(creditsToBuyAmount);
             }}

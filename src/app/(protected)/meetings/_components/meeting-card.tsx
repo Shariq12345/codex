@@ -89,11 +89,11 @@ export const MeetingCard = () => {
     <Card
       {...getRootProps()}
       className={`relative col-span-2 cursor-pointer overflow-hidden transition-all duration-300 ${
-        dragActive ? "ring-2 ring-blue-500 ring-offset-2" : ""
+        dragActive ? "ring-2 ring-violet-500 ring-offset-2" : ""
       }`}
     >
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 opacity-50" />
+      <div className="absolute inset-0 bg-gradient-to-br from-violet-50 via-white to-purple-50 opacity-50" />
 
       {/* Content container */}
       <div className="relative flex flex-col items-center justify-center p-10">
@@ -110,9 +110,9 @@ export const MeetingCard = () => {
                   animate={{
                     scale: dragActive ? 1.1 : 1,
                   }}
-                  className="rounded-full bg-blue-100 p-4"
+                  className="rounded-full bg-violet-100 p-4"
                 >
-                  <PresentationIcon className="size-8 text-blue-600" />
+                  <PresentationIcon className="size-8 text-violet-600" />
                 </motion.div>
                 <motion.div
                   animate={{
@@ -120,7 +120,7 @@ export const MeetingCard = () => {
                   }}
                   className="absolute -right-2 -top-2 rounded-full bg-white p-1 shadow-lg"
                 >
-                  <FileAudio className="size-4 text-blue-600" />
+                  <FileAudio className="size-4 text-violet-600" />
                 </motion.div>
               </div>
 
@@ -139,7 +139,7 @@ export const MeetingCard = () => {
               >
                 Analyse your meeting with Codex
                 <br />
-                <span className="text-blue-600">Powered by AI</span>
+                <span className="text-violet-600">Powered by AI</span>
               </motion.p>
 
               <motion.div
@@ -149,7 +149,7 @@ export const MeetingCard = () => {
               >
                 <Button
                   disabled={isUploading}
-                  className="group relative overflow-hidden bg-blue-600 px-6 py-2 transition-all hover:bg-blue-700"
+                  className="group relative overflow-hidden bg-violet-600 px-6 py-2 transition-all hover:bg-violet-700"
                 >
                   <motion.span
                     animate={{
@@ -168,7 +168,7 @@ export const MeetingCard = () => {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="mt-4 text-sm text-blue-600"
+                  className="mt-4 text-sm text-violet-600"
                 >
                   Drop your audio file here
                 </motion.div>
